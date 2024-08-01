@@ -1,0 +1,17 @@
+Package: evetiny
+Title: Evolution Emulator, phylogenetically dependent
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Tianjian",
+           family = "Qin",
+           role = c("aut", "cre"),
+           email = "t.qin@rug.nl",
+           comment = c(ORCID = "0000-0003-2540-1778"))
+Description: Provides functions to conveniently run evolutionary relatedness dependent simulation and analyze the results.
+License: GPL (>= 3)
+Depends: R (>= 3.5.0)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+SystemRequirements: C++20
+LinkingTo: Rcpp (>= 1.0.11), RcppParallel
