@@ -1,4 +1,4 @@
-useDynLib(eveSim, .registration=TRUE)
+useDynLib(evesim, .registration=TRUE)
 import(Rcpp)
 importFrom(RcppParallel, RcppParallelLibs)
 exportPattern("^[[:alpha:]]+")

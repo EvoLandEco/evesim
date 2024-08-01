@@ -12,7 +12,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // Ltable_phylo
 Rcpp::List Ltable_phylo(const Rcpp::NumericMatrix& LR, bool drop_extinct, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_phylo(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_phylo(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< const Rcpp::NumericMatrix& >::type LR(LRSEXP);
@@ -24,7 +24,7 @@ END_RCPP
 }
 // Ltable_prune
 Rcpp::NumericMatrix Ltable_prune(Rcpp::NumericMatrix LR, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_prune(SEXP LRSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_prune(SEXP LRSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -35,7 +35,7 @@ END_RCPP
 }
 // Ltable_legacy_ascending
 Rcpp::NumericMatrix Ltable_legacy_ascending(Rcpp::NumericMatrix LR, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_legacy_ascending(SEXP LRSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_legacy_ascending(SEXP LRSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -46,7 +46,7 @@ END_RCPP
 }
 // Ltable_legacy_descending
 Rcpp::NumericMatrix Ltable_legacy_descending(Rcpp::NumericMatrix LR, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_legacy_descending(SEXP LRSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_legacy_descending(SEXP LRSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -57,7 +57,7 @@ END_RCPP
 }
 // Ltable_cophenetic
 Rcpp::NumericMatrix Ltable_cophenetic(Rcpp::NumericMatrix LR, bool drop_extinct, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_cophenetic(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_cophenetic(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -69,7 +69,7 @@ END_RCPP
 }
 // Ltable_ed
 Rcpp::NumericVector Ltable_ed(Rcpp::NumericMatrix LR, bool drop_extinct, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_ed(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_ed(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -81,7 +81,7 @@ END_RCPP
 }
 // Ltable_nnd
 Rcpp::NumericVector Ltable_nnd(Rcpp::NumericMatrix LR, bool drop_extinct, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_nnd(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_nnd(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -93,7 +93,7 @@ END_RCPP
 }
 // Ltable_pd
 double Ltable_pd(Rcpp::NumericMatrix LR, bool drop_extinct, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_pd(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_pd(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -105,7 +105,7 @@ END_RCPP
 }
 // Ltable_mpd
 double Ltable_mpd(Rcpp::NumericMatrix LR, bool drop_extinct, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_mpd(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_mpd(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -117,7 +117,7 @@ END_RCPP
 }
 // Ltable_tree
 SEXP Ltable_tree(Rcpp::NumericMatrix LR, bool drop_extinct, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Ltable_tree(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Ltable_tree(SEXP LRSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::NumericMatrix >::type LR(LRSEXP);
@@ -129,7 +129,7 @@ END_RCPP
 }
 // Xtree
 SEXP Xtree(Rcpp::RObject Robj, bool drop_extinct, Rcpp::Nullable<double> age);
-RcppExport SEXP _evetiny_Xtree(SEXP RobjSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
+RcppExport SEXP _evesim_Xtree(SEXP RobjSEXP, SEXP drop_extinctSEXP, SEXP ageSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -141,7 +141,7 @@ END_RCPP
 }
 // Xtree_is
 bool Xtree_is(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_Xtree_is(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_is(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -151,7 +151,7 @@ END_RCPP
 }
 // Xtree_tips
 int Xtree_tips(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_Xtree_tips(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_tips(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -161,7 +161,7 @@ END_RCPP
 }
 // Xtree_nnode
 int Xtree_nnode(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_Xtree_nnode(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_nnode(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -171,7 +171,7 @@ END_RCPP
 }
 // Xtree_drop_extinct
 SEXP Xtree_drop_extinct(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_Xtree_drop_extinct(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_drop_extinct(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -181,7 +181,7 @@ END_RCPP
 }
 // Xtree_tip_label
 Rcpp::IntegerVector Xtree_tip_label(SEXP Robj);
-RcppExport SEXP _evetiny_Xtree_tip_label(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_tip_label(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -191,7 +191,7 @@ END_RCPP
 }
 // Xtree_phylo
 Rcpp::List Xtree_phylo(SEXP Robj);
-RcppExport SEXP _evetiny_Xtree_phylo(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_phylo(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -201,7 +201,7 @@ END_RCPP
 }
 // Xtree_cophenetic
 Rcpp::NumericMatrix Xtree_cophenetic(SEXP Robj);
-RcppExport SEXP _evetiny_Xtree_cophenetic(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_cophenetic(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -211,7 +211,7 @@ END_RCPP
 }
 // Xtree_ed
 Rcpp::NumericVector Xtree_ed(SEXP Robj);
-RcppExport SEXP _evetiny_Xtree_ed(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_ed(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -221,7 +221,7 @@ END_RCPP
 }
 // Xtree_nnd
 Rcpp::NumericVector Xtree_nnd(SEXP Robj);
-RcppExport SEXP _evetiny_Xtree_nnd(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_nnd(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -231,7 +231,7 @@ END_RCPP
 }
 // Xtree_pd
 double Xtree_pd(SEXP Robj);
-RcppExport SEXP _evetiny_Xtree_pd(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_pd(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -241,7 +241,7 @@ END_RCPP
 }
 // Xtree_mpd
 double Xtree_mpd(SEXP Robj);
-RcppExport SEXP _evetiny_Xtree_mpd(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_Xtree_mpd(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -251,7 +251,7 @@ END_RCPP
 }
 // SimTable
 SEXP SimTable(Rcpp::Nullable<Rcpp::RObject> Rrhs);
-RcppExport SEXP _evetiny_SimTable(SEXP RrhsSEXP) {
+RcppExport SEXP _evesim_SimTable(SEXP RrhsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::Nullable<Rcpp::RObject> >::type Rrhs(RrhsSEXP);
@@ -261,7 +261,7 @@ END_RCPP
 }
 // SimTable_is
 bool SimTable_is(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_SimTable_is(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_is(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -271,7 +271,7 @@ END_RCPP
 }
 // SimTable_age
 double SimTable_age(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_SimTable_age(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_age(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -281,7 +281,7 @@ END_RCPP
 }
 // SimTable_nspecie
 int SimTable_nspecie(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_SimTable_nspecie(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_nspecie(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -291,7 +291,7 @@ END_RCPP
 }
 // SimTable_nclade_specie
 Rcpp::IntegerVector SimTable_nclade_specie(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_SimTable_nclade_specie(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_nclade_specie(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -301,7 +301,7 @@ END_RCPP
 }
 // SimTable_size
 int SimTable_size(Rcpp::RObject Robj);
-RcppExport SEXP _evetiny_SimTable_size(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_size(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Rcpp::RObject >::type Robj(RobjSEXP);
@@ -311,7 +311,7 @@ END_RCPP
 }
 // SimTable_ltable
 Rcpp::NumericMatrix SimTable_ltable(SEXP Robj);
-RcppExport SEXP _evetiny_SimTable_ltable(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_ltable(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -321,7 +321,7 @@ END_RCPP
 }
 // SimTable_phylo
 Rcpp::List SimTable_phylo(SEXP Robj, bool drop_extinct);
-RcppExport SEXP _evetiny_SimTable_phylo(SEXP RobjSEXP, SEXP drop_extinctSEXP) {
+RcppExport SEXP _evesim_SimTable_phylo(SEXP RobjSEXP, SEXP drop_extinctSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -332,7 +332,7 @@ END_RCPP
 }
 // SimTable_tree
 SEXP SimTable_tree(SEXP Robj, bool drop_extinct);
-RcppExport SEXP _evetiny_SimTable_tree(SEXP RobjSEXP, SEXP drop_extinctSEXP) {
+RcppExport SEXP _evesim_SimTable_tree(SEXP RobjSEXP, SEXP drop_extinctSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -343,7 +343,7 @@ END_RCPP
 }
 // SimTable_speciation
 Rcpp::IntegerVector SimTable_speciation(SEXP Robj, int specie, double t);
-RcppExport SEXP _evetiny_SimTable_speciation(SEXP RobjSEXP, SEXP specieSEXP, SEXP tSEXP) {
+RcppExport SEXP _evesim_SimTable_speciation(SEXP RobjSEXP, SEXP specieSEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -355,7 +355,7 @@ END_RCPP
 }
 // SimTable_extinction
 Rcpp::IntegerVector SimTable_extinction(SEXP Robj, int specie, double t);
-RcppExport SEXP _evetiny_SimTable_extinction(SEXP RobjSEXP, SEXP specieSEXP, SEXP tSEXP) {
+RcppExport SEXP _evesim_SimTable_extinction(SEXP RobjSEXP, SEXP specieSEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -367,7 +367,7 @@ END_RCPP
 }
 // SimTable_tip_label
 Rcpp::IntegerVector SimTable_tip_label(SEXP Robj, bool drop_extinct);
-RcppExport SEXP _evetiny_SimTable_tip_label(SEXP RobjSEXP, SEXP drop_extinctSEXP) {
+RcppExport SEXP _evesim_SimTable_tip_label(SEXP RobjSEXP, SEXP drop_extinctSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -378,7 +378,7 @@ END_RCPP
 }
 // SimTable_cophenetic
 Rcpp::NumericMatrix SimTable_cophenetic(SEXP Robj);
-RcppExport SEXP _evetiny_SimTable_cophenetic(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_cophenetic(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -388,7 +388,7 @@ END_RCPP
 }
 // SimTable_ed
 Rcpp::NumericVector SimTable_ed(SEXP Robj);
-RcppExport SEXP _evetiny_SimTable_ed(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_ed(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -398,7 +398,7 @@ END_RCPP
 }
 // SimTable_nnd
 Rcpp::NumericVector SimTable_nnd(SEXP Robj);
-RcppExport SEXP _evetiny_SimTable_nnd(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_nnd(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -408,7 +408,7 @@ END_RCPP
 }
 // SimTable_pd
 double SimTable_pd(SEXP Robj);
-RcppExport SEXP _evetiny_SimTable_pd(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_pd(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -418,7 +418,7 @@ END_RCPP
 }
 // SimTable_mpd
 double SimTable_mpd(SEXP Robj);
-RcppExport SEXP _evetiny_SimTable_mpd(SEXP RobjSEXP) {
+RcppExport SEXP _evesim_SimTable_mpd(SEXP RobjSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
@@ -428,49 +428,49 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_evetiny_Ltable_phylo", (DL_FUNC) &_evetiny_Ltable_phylo, 3},
-    {"_evetiny_Ltable_prune", (DL_FUNC) &_evetiny_Ltable_prune, 2},
-    {"_evetiny_Ltable_legacy_ascending", (DL_FUNC) &_evetiny_Ltable_legacy_ascending, 2},
-    {"_evetiny_Ltable_legacy_descending", (DL_FUNC) &_evetiny_Ltable_legacy_descending, 2},
-    {"_evetiny_Ltable_cophenetic", (DL_FUNC) &_evetiny_Ltable_cophenetic, 3},
-    {"_evetiny_Ltable_ed", (DL_FUNC) &_evetiny_Ltable_ed, 3},
-    {"_evetiny_Ltable_nnd", (DL_FUNC) &_evetiny_Ltable_nnd, 3},
-    {"_evetiny_Ltable_pd", (DL_FUNC) &_evetiny_Ltable_pd, 3},
-    {"_evetiny_Ltable_mpd", (DL_FUNC) &_evetiny_Ltable_mpd, 3},
-    {"_evetiny_Ltable_tree", (DL_FUNC) &_evetiny_Ltable_tree, 3},
-    {"_evetiny_Xtree", (DL_FUNC) &_evetiny_Xtree, 3},
-    {"_evetiny_Xtree_is", (DL_FUNC) &_evetiny_Xtree_is, 1},
-    {"_evetiny_Xtree_tips", (DL_FUNC) &_evetiny_Xtree_tips, 1},
-    {"_evetiny_Xtree_nnode", (DL_FUNC) &_evetiny_Xtree_nnode, 1},
-    {"_evetiny_Xtree_drop_extinct", (DL_FUNC) &_evetiny_Xtree_drop_extinct, 1},
-    {"_evetiny_Xtree_tip_label", (DL_FUNC) &_evetiny_Xtree_tip_label, 1},
-    {"_evetiny_Xtree_phylo", (DL_FUNC) &_evetiny_Xtree_phylo, 1},
-    {"_evetiny_Xtree_cophenetic", (DL_FUNC) &_evetiny_Xtree_cophenetic, 1},
-    {"_evetiny_Xtree_ed", (DL_FUNC) &_evetiny_Xtree_ed, 1},
-    {"_evetiny_Xtree_nnd", (DL_FUNC) &_evetiny_Xtree_nnd, 1},
-    {"_evetiny_Xtree_pd", (DL_FUNC) &_evetiny_Xtree_pd, 1},
-    {"_evetiny_Xtree_mpd", (DL_FUNC) &_evetiny_Xtree_mpd, 1},
-    {"_evetiny_SimTable", (DL_FUNC) &_evetiny_SimTable, 1},
-    {"_evetiny_SimTable_is", (DL_FUNC) &_evetiny_SimTable_is, 1},
-    {"_evetiny_SimTable_age", (DL_FUNC) &_evetiny_SimTable_age, 1},
-    {"_evetiny_SimTable_nspecie", (DL_FUNC) &_evetiny_SimTable_nspecie, 1},
-    {"_evetiny_SimTable_nclade_specie", (DL_FUNC) &_evetiny_SimTable_nclade_specie, 1},
-    {"_evetiny_SimTable_size", (DL_FUNC) &_evetiny_SimTable_size, 1},
-    {"_evetiny_SimTable_ltable", (DL_FUNC) &_evetiny_SimTable_ltable, 1},
-    {"_evetiny_SimTable_phylo", (DL_FUNC) &_evetiny_SimTable_phylo, 2},
-    {"_evetiny_SimTable_tree", (DL_FUNC) &_evetiny_SimTable_tree, 2},
-    {"_evetiny_SimTable_speciation", (DL_FUNC) &_evetiny_SimTable_speciation, 3},
-    {"_evetiny_SimTable_extinction", (DL_FUNC) &_evetiny_SimTable_extinction, 3},
-    {"_evetiny_SimTable_tip_label", (DL_FUNC) &_evetiny_SimTable_tip_label, 2},
-    {"_evetiny_SimTable_cophenetic", (DL_FUNC) &_evetiny_SimTable_cophenetic, 1},
-    {"_evetiny_SimTable_ed", (DL_FUNC) &_evetiny_SimTable_ed, 1},
-    {"_evetiny_SimTable_nnd", (DL_FUNC) &_evetiny_SimTable_nnd, 1},
-    {"_evetiny_SimTable_pd", (DL_FUNC) &_evetiny_SimTable_pd, 1},
-    {"_evetiny_SimTable_mpd", (DL_FUNC) &_evetiny_SimTable_mpd, 1},
+    {"_evesim_Ltable_phylo", (DL_FUNC) &_evesim_Ltable_phylo, 3},
+    {"_evesim_Ltable_prune", (DL_FUNC) &_evesim_Ltable_prune, 2},
+    {"_evesim_Ltable_legacy_ascending", (DL_FUNC) &_evesim_Ltable_legacy_ascending, 2},
+    {"_evesim_Ltable_legacy_descending", (DL_FUNC) &_evesim_Ltable_legacy_descending, 2},
+    {"_evesim_Ltable_cophenetic", (DL_FUNC) &_evesim_Ltable_cophenetic, 3},
+    {"_evesim_Ltable_ed", (DL_FUNC) &_evesim_Ltable_ed, 3},
+    {"_evesim_Ltable_nnd", (DL_FUNC) &_evesim_Ltable_nnd, 3},
+    {"_evesim_Ltable_pd", (DL_FUNC) &_evesim_Ltable_pd, 3},
+    {"_evesim_Ltable_mpd", (DL_FUNC) &_evesim_Ltable_mpd, 3},
+    {"_evesim_Ltable_tree", (DL_FUNC) &_evesim_Ltable_tree, 3},
+    {"_evesim_Xtree", (DL_FUNC) &_evesim_Xtree, 3},
+    {"_evesim_Xtree_is", (DL_FUNC) &_evesim_Xtree_is, 1},
+    {"_evesim_Xtree_tips", (DL_FUNC) &_evesim_Xtree_tips, 1},
+    {"_evesim_Xtree_nnode", (DL_FUNC) &_evesim_Xtree_nnode, 1},
+    {"_evesim_Xtree_drop_extinct", (DL_FUNC) &_evesim_Xtree_drop_extinct, 1},
+    {"_evesim_Xtree_tip_label", (DL_FUNC) &_evesim_Xtree_tip_label, 1},
+    {"_evesim_Xtree_phylo", (DL_FUNC) &_evesim_Xtree_phylo, 1},
+    {"_evesim_Xtree_cophenetic", (DL_FUNC) &_evesim_Xtree_cophenetic, 1},
+    {"_evesim_Xtree_ed", (DL_FUNC) &_evesim_Xtree_ed, 1},
+    {"_evesim_Xtree_nnd", (DL_FUNC) &_evesim_Xtree_nnd, 1},
+    {"_evesim_Xtree_pd", (DL_FUNC) &_evesim_Xtree_pd, 1},
+    {"_evesim_Xtree_mpd", (DL_FUNC) &_evesim_Xtree_mpd, 1},
+    {"_evesim_SimTable", (DL_FUNC) &_evesim_SimTable, 1},
+    {"_evesim_SimTable_is", (DL_FUNC) &_evesim_SimTable_is, 1},
+    {"_evesim_SimTable_age", (DL_FUNC) &_evesim_SimTable_age, 1},
+    {"_evesim_SimTable_nspecie", (DL_FUNC) &_evesim_SimTable_nspecie, 1},
+    {"_evesim_SimTable_nclade_specie", (DL_FUNC) &_evesim_SimTable_nclade_specie, 1},
+    {"_evesim_SimTable_size", (DL_FUNC) &_evesim_SimTable_size, 1},
+    {"_evesim_SimTable_ltable", (DL_FUNC) &_evesim_SimTable_ltable, 1},
+    {"_evesim_SimTable_phylo", (DL_FUNC) &_evesim_SimTable_phylo, 2},
+    {"_evesim_SimTable_tree", (DL_FUNC) &_evesim_SimTable_tree, 2},
+    {"_evesim_SimTable_speciation", (DL_FUNC) &_evesim_SimTable_speciation, 3},
+    {"_evesim_SimTable_extinction", (DL_FUNC) &_evesim_SimTable_extinction, 3},
+    {"_evesim_SimTable_tip_label", (DL_FUNC) &_evesim_SimTable_tip_label, 2},
+    {"_evesim_SimTable_cophenetic", (DL_FUNC) &_evesim_SimTable_cophenetic, 1},
+    {"_evesim_SimTable_ed", (DL_FUNC) &_evesim_SimTable_ed, 1},
+    {"_evesim_SimTable_nnd", (DL_FUNC) &_evesim_SimTable_nnd, 1},
+    {"_evesim_SimTable_pd", (DL_FUNC) &_evesim_SimTable_pd, 1},
+    {"_evesim_SimTable_mpd", (DL_FUNC) &_evesim_SimTable_mpd, 1},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_evetiny(DllInfo *dll) {
+RcppExport void R_init_evesim(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

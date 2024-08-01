@@ -1,6 +1,6 @@
-library(evetiny)
-#detach("package:evetiny", unload = TRUE)
-#library(evetiny)
+library(evesim)
+#detach("package:evesim", unload = TRUE)
+#library(evesim)
 library(ape)
 library(microbenchmark)
 library(ggplot2)
@@ -28,13 +28,13 @@ age <- 10
 pars <- c(la, mu, K)
 
 print("Running simulation")
-sim <- evetiny::dd_sim(pars = pars, age = age, ddmodel = 1)
+sim <- evesim::dd_sim(pars = pars, age = age, ddmodel = 1)
 phy <- SimTable.phylo(sim, drop_extinct = TRUE)
 L <- Ltable.legacy.ascending(SimTable.ltable(sim), age)
 
-LL <- evetiny::SimTable.ltable(sim)
-s <- evetiny::SimTable(LL)
-evetiny::SimTable.ed(s)
+LL <- evesim::SimTable.ltable(sim)
+s <- evesim::SimTable(LL)
+evesim::SimTable.ed(s)
 
 D <- SimTable.cophenetic(sim)
 phy <- SimTable.phylo(sim, drop_extinct = TRUE)
