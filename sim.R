@@ -22,6 +22,6 @@ offset = "none"
 set.seed(42)
 #X <- eve::edd_sim(pars = pars, age = age, model = model, metric = metric, offset = offset, history = FALSE)
 set.seed(42)
-Y <- evesim::edd.sim(pars = pars, age = age, metric = metric, offset = offset)
+Y <- evesim::edd_sim(pars = pars, age = age, metric = metric, offset = offset)
 
 dummy <- 0
