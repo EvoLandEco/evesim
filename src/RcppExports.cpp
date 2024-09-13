@@ -377,52 +377,57 @@ BEGIN_RCPP
 END_RCPP
 }
 // SimTable_cophenetic
-Rcpp::NumericMatrix SimTable_cophenetic(SEXP Robj);
-RcppExport SEXP _evesim_SimTable_cophenetic(SEXP RobjSEXP) {
+Rcpp::NumericMatrix SimTable_cophenetic(SEXP Robj, Rcpp::Nullable<double> t);
+RcppExport SEXP _evesim_SimTable_cophenetic(SEXP RobjSEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimTable_cophenetic(Robj));
+    Rcpp::traits::input_parameter< Rcpp::Nullable<double> >::type t(tSEXP);
+    rcpp_result_gen = Rcpp::wrap(SimTable_cophenetic(Robj, t));
     return rcpp_result_gen;
 END_RCPP
 }
 // SimTable_ed
-Rcpp::NumericVector SimTable_ed(SEXP Robj);
-RcppExport SEXP _evesim_SimTable_ed(SEXP RobjSEXP) {
+Rcpp::NumericVector SimTable_ed(SEXP Robj, Rcpp::Nullable<double> t);
+RcppExport SEXP _evesim_SimTable_ed(SEXP RobjSEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimTable_ed(Robj));
+    Rcpp::traits::input_parameter< Rcpp::Nullable<double> >::type t(tSEXP);
+    rcpp_result_gen = Rcpp::wrap(SimTable_ed(Robj, t));
     return rcpp_result_gen;
 END_RCPP
 }
 // SimTable_nnd
-Rcpp::NumericVector SimTable_nnd(SEXP Robj);
-RcppExport SEXP _evesim_SimTable_nnd(SEXP RobjSEXP) {
+Rcpp::NumericVector SimTable_nnd(SEXP Robj, Rcpp::Nullable<double> t);
+RcppExport SEXP _evesim_SimTable_nnd(SEXP RobjSEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimTable_nnd(Robj));
+    Rcpp::traits::input_parameter< Rcpp::Nullable<double> >::type t(tSEXP);
+    rcpp_result_gen = Rcpp::wrap(SimTable_nnd(Robj, t));
     return rcpp_result_gen;
 END_RCPP
 }
 // SimTable_pd
-double SimTable_pd(SEXP Robj);
-RcppExport SEXP _evesim_SimTable_pd(SEXP RobjSEXP) {
+double SimTable_pd(SEXP Robj, Rcpp::Nullable<double> t);
+RcppExport SEXP _evesim_SimTable_pd(SEXP RobjSEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimTable_pd(Robj));
+    Rcpp::traits::input_parameter< Rcpp::Nullable<double> >::type t(tSEXP);
+    rcpp_result_gen = Rcpp::wrap(SimTable_pd(Robj, t));
     return rcpp_result_gen;
 END_RCPP
 }
 // SimTable_mpd
-double SimTable_mpd(SEXP Robj);
-RcppExport SEXP _evesim_SimTable_mpd(SEXP RobjSEXP) {
+double SimTable_mpd(SEXP Robj, Rcpp::Nullable<double> t);
+RcppExport SEXP _evesim_SimTable_mpd(SEXP RobjSEXP, SEXP tSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< SEXP >::type Robj(RobjSEXP);
-    rcpp_result_gen = Rcpp::wrap(SimTable_mpd(Robj));
+    Rcpp::traits::input_parameter< Rcpp::Nullable<double> >::type t(tSEXP);
+    rcpp_result_gen = Rcpp::wrap(SimTable_mpd(Robj, t));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -462,11 +467,11 @@ static const R_CallMethodDef CallEntries[] = {
     {"_evesim_SimTable_speciation", (DL_FUNC) &_evesim_SimTable_speciation, 3},
     {"_evesim_SimTable_extinction", (DL_FUNC) &_evesim_SimTable_extinction, 3},
     {"_evesim_SimTable_tip_label", (DL_FUNC) &_evesim_SimTable_tip_label, 2},
-    {"_evesim_SimTable_cophenetic", (DL_FUNC) &_evesim_SimTable_cophenetic, 1},
-    {"_evesim_SimTable_ed", (DL_FUNC) &_evesim_SimTable_ed, 1},
-    {"_evesim_SimTable_nnd", (DL_FUNC) &_evesim_SimTable_nnd, 1},
-    {"_evesim_SimTable_pd", (DL_FUNC) &_evesim_SimTable_pd, 1},
-    {"_evesim_SimTable_mpd", (DL_FUNC) &_evesim_SimTable_mpd, 1},
+    {"_evesim_SimTable_cophenetic", (DL_FUNC) &_evesim_SimTable_cophenetic, 2},
+    {"_evesim_SimTable_ed", (DL_FUNC) &_evesim_SimTable_ed, 2},
+    {"_evesim_SimTable_nnd", (DL_FUNC) &_evesim_SimTable_nnd, 2},
+    {"_evesim_SimTable_pd", (DL_FUNC) &_evesim_SimTable_pd, 2},
+    {"_evesim_SimTable_mpd", (DL_FUNC) &_evesim_SimTable_mpd, 2},
     {NULL, NULL, 0}
 };
 

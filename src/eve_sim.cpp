@@ -410,35 +410,64 @@ Rcpp::IntegerVector SimTable_tip_label(SEXP Robj, bool drop_extinct) {
 
 
 // [[Rcpp::export("SimTable.cophenetic", rng = false)]]
-Rcpp::NumericMatrix SimTable_cophenetic(SEXP Robj) {
+Rcpp::NumericMatrix SimTable_cophenetic(SEXP Robj, Rcpp::Nullable<double> t = R_NilValue) {
   auto* ptr = tagged_xptr<sim_table_t>(Robj, SimTable_tag).get();
-  return tree_metric::metric(tree_metric::cophenetic{}, ptr->tree());
+  auto res = tree_metric::metric(tree_metric::cophenetic{}, ptr->tree());
+  if (t.isNotNull()) {
+    const double ofs = 2.0 * (ptr->age() - Rcpp::as<double>(t));
+    const int tips = ptr->nspecie();
+    for (int i = 0; i < tips; ++i) {
+      for (int j = 0; j < tips; ++i) {
+        if (i != j) res(i, j) -= ofs;
+      }
+    }
+  }
+  return res;
 }
 
 
 // [[Rcpp::export("SimTable.ed", rng = false)]]
-Rcpp::NumericVector SimTable_ed(SEXP Robj) {
+Rcpp::NumericVector SimTable_ed(SEXP Robj, Rcpp::Nullable<double> t = R_NilValue) {
   auto* ptr = tagged_xptr<sim_table_t>(Robj, SimTable_tag).get();
-  return tree_metric::metric(tree_metric::ed{}, ptr->tree());
+  auto res =tree_metric::metric(tree_metric::ed{}, ptr->tree());
+  if (t.isNotNull()) {
+    const double ofs = 2.0 * (ptr->age() - Rcpp::as<double>(t));
+    for (auto& r : res) { r -= ofs; }
+  }
+  return res;
 }
 
 
 // [[Rcpp::export("SimTable.nnd", rng = false)]]
-Rcpp::NumericVector SimTable_nnd(SEXP Robj) {
+Rcpp::NumericVector SimTable_nnd(SEXP Robj, Rcpp::Nullable<double> t = R_NilValue) {
   auto* ptr = tagged_xptr<sim_table_t>(Robj, SimTable_tag).get();
-  return tree_metric::metric(tree_metric::nnd{}, ptr->tree());
+  auto res = tree_metric::metric(tree_metric::nnd{}, ptr->tree());
+  if (t.isNotNull()) {
+    const double ofs = 2.0 * (ptr->age() - Rcpp::as<double>(t));
+    for (auto& r : res) { r -= ofs; }
+  }
+  return res;
 }
 
 
 // [[Rcpp::export("SimTable.pd", rng = false)]]
-double SimTable_pd(SEXP Robj) {
+double SimTable_pd(SEXP Robj, Rcpp::Nullable<double> t = R_NilValue) {
   auto* ptr = tagged_xptr<sim_table_t>(Robj, SimTable_tag).get();
-  return tree_metric::metric(tree_metric::pd{}, ptr->tree());
+  auto res = tree_metric::metric(tree_metric::pd{}, ptr->tree());
+  if (t.isNotNull()) {
+    res -= ptr->nspecie() * (ptr->age() - Rcpp::as<double>(t));
+  }
+  return res;
 }
 
 
 // [[Rcpp::export("SimTable.mpd", rng = false)]]
-double SimTable_mpd(SEXP Robj) {
+double SimTable_mpd(SEXP Robj, Rcpp::Nullable<double> t = R_NilValue) {
   auto* ptr = tagged_xptr<sim_table_t>(Robj, SimTable_tag).get();
-  return tree_metric::metric(tree_metric::mpd{}, ptr->tree());
+  auto res =  tree_metric::metric(tree_metric::mpd{}, ptr->tree());
+  if (t.isNotNull()) {
+    const int tips = ptr->nspecie();
+    res -= 2.0 * (ptr->age() - Rcpp::as<double>(t)) / (tips * (tips - 1));
+  }
+  return res;
 }
