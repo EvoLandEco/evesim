@@ -1,4 +1,4 @@
-edd_pars_check <- function(pars, age, model, metric, offset) {
+edd_pars_check <- function(pars, age, metric, offset) {
   # pars range check
   if (pars[1] <= 0) {
     stop("speciation rate should be positive")
@@ -7,9 +7,6 @@ edd_pars_check <- function(pars, age, model, metric, offset) {
     stop("extinction rate should be none-negative")
   }
   # pars and model match check
-  if (model == "dsce2" && length(pars) != 6) {
-    pars <- c(pars, 0.0, 0.0)   # zero out gamme_num & gamma_phi
-  }
   if (length(pars) != 6) {
     stop("six parameters required")
   }
@@ -55,7 +52,7 @@ edd_lamu <- function(pars, metric, offset) {
   gamma_phi <- pars[6]
   ed_fn <- edd_metric(metric, offset)
 
-  if (metric == "ed") {
+  if ((metric == "nnd") || (metric == "ed")) {
     # metric returns vector
     fn <- function(sim, t) {
       ed <- ed_fn(sim, t)
@@ -91,7 +88,7 @@ edd_lamu <- function(pars, metric, offset) {
 
 
 edd_sampler <- function(metric) {
-  if (metric == "ed") {
+  if ((metric == "nnd") || (metric == "ed")) {
     # metric returns vector
     fn <- function(lamu) {
       sn <- sample.int(2 * lamu$num, 1, prob = lamu$lamu)
@@ -114,7 +111,7 @@ edd_sampler <- function(metric) {
 
 
 # returns valid SimTable or error message
-edd_sim_single <- function(pars, age, model, metric, offset, size_limit, max_steps) {
+edd_sim_single <- function(pars, age, metric, offset, size_limit) {
   sim <- evesim::SimTable(age)
   lamu_fn <- edd_lamu(pars, metric, offset)
   lamu <- lamu_fn(sim, 0.0)
@@ -130,22 +127,18 @@ edd_sim_single <- function(pars, age, model, metric, offset, size_limit, max_ste
       # real event
       sample <- sampler(lamu_real)
       if (sample$speciation) {
-        nc <- evesim::SimTable.speciation(sim, sample$specie, t)
-        if (sum(nc) > size_limit) {
-          return("size limit exceeded")
-        }
+        evesim::SimTable.speciation(sim, sample$specie, t)
       } else {
         nc <- evesim::SimTable.extinction(sim, sample$specie, t)
         if (0 == (nc[1] * nc[2])) {
-          return("crown lineage goes extinct")
+          return("crown lineage went extinct")
         }
       }
     }
     lamu <- lamu_fn(sim, t)
     t <- t + stats::rexp(1, lamu$prob)
-    max_steps <- max_steps - 1
-    if (max_steps <= 0) {
-      return("max_steps exceeded")
+    if (evesim::SimTable.size(sim) > size_limit) {
+      return("size limit exceeded")
     }
   }
   return(sim)
@@ -155,16 +148,14 @@ edd_sim_single <- function(pars, age, model, metric, offset, size_limit, max_ste
 #' @export edd_sim
 edd_sim <- function(pars,
                     age,
-                    model = "dsce2",
                     metric = "ed",
                     offset = "none",
                     size_limit = 10000,
-                    max_steps = 100000,
                     retry = 100) {
-  pars <- edd_pars_check(pars, age, model, metric, offset)
+  pars <- edd_pars_check(pars, age, metric, offset)
   msg <- ""
   while (retry > 0) {
-    res <- edd_sim_single(pars, age, model, metric, offset, size_limit, max_steps)
+    res <- edd_sim_single(pars, age, metric, offset, size_limit)
     if (is.character(res)) {
       msg <- paste(msg, sep = "\n", res)
       retry <- retry - 1
