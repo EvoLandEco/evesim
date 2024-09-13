@@ -9,7 +9,7 @@
 #include <numeric>
 #include <functional>
 #include <tuple>
-#include "tres_sim/phylo.h"
+#include "evesim/phylo.h"
 
 
 namespace eve { 

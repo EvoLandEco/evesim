@@ -2,10 +2,10 @@
 //  SPDX-License-Identifier: MIT
 
 #include <vector>
-#include "tres_sim/phylo.h"
-#include "tres_sim/ltable.h"
-#include "tres_sim/tree.h"
-#include "tres_sim/tree_visit.h"
+#include "evesim/phylo.h"
+#include "evesim/ltable.h"
+#include "evesim/tree.h"
+#include "evesim/tree_visit.h"
 
 
 namespace tres_sim {

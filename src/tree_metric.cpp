@@ -10,8 +10,8 @@
 #include <functional>
 #include <utility>
 #include <vector>
-#include "tres_sim/tree_metric.h"
-#include "tres_sim/rutils.h"
+#include "evesim/tree_metric.h"
+#include "evesim/rutils.h"
 
 
 namespace tres_sim {

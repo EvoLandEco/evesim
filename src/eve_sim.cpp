@@ -5,10 +5,10 @@
 #include <algorithm>
 #include <numeric>
 #include <string>
-#include "tres_sim/rutils.h"
-#include "tres_sim/phylo.h"
-#include "tres_sim/tree_metric.h"
-#include "tres_sim/sim_table.h"
+#include "evesim/rutils.h"
+#include "evesim/phylo.h"
+#include "evesim/tree_metric.h"
+#include "evesim/sim_table.h"
 
 
 using namespace rutils;

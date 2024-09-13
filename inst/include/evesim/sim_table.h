@@ -7,8 +7,8 @@
 
 #include <array>
 #include <vector>
-#include "tres_sim/ltable.h"
-#include "tres_sim/tree_metric.h"
+#include "evesim/ltable.h"
+#include "evesim/tree_metric.h"
 
 
 namespace tres_sim {
