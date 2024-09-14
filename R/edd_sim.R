@@ -156,6 +156,7 @@ edd_sim <- function(pars,
                     size_limit = 10000,
                     retry = 100) {
   pars <- edd_pars_check(pars, age, metric, offset)
+  age <- as.double(age)
   msg <- ""
   while (retry > 0) {
     res <- edd_sim_single(pars, age, metric, offset, size_limit)
