@@ -1,6 +1,8 @@
 
 # evesim
 
+https://github.com/HHildenbrandt/evesim.git
+
 ## Example
 
 ```R
@@ -13,7 +15,7 @@ library(ape)
 RcppParallel::setThreadOptions(numThreads = 1)
 
 pars = c(0.5, 0.1, -0.001, -0.001, 0.0, 0.0)
-sim <- edd_sim(pars = pars, age = 50, metric = "nnd", offset = "none")
+sim <- edd_sim(pars = pars, age = 10, metric = "nnd", offset = "none")
 
 # convert to an ape::phylo object
 phy <- SimTable.phylo(sim$sim, drop_extinct = TRUE)
