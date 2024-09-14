@@ -29,7 +29,7 @@ edd_metric <- function(metric, offset) {
   } else if (metric == "pd") {
     if (offset == "none") {
       fn <- evesim::SimTable.pd
-    } else if (metric == "simtime") {
+    } else if (offset == "simtime") {
       fn <- function(sim, t) {
         evesim::SimTable.pd(sim, t) - t
       }
