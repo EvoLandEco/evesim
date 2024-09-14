@@ -120,7 +120,7 @@ edd_sim_single <- function(pars, age, metric, offset, size_limit) {
   while (t <= age) {
     lamu_real <- lamu_fn(sim, t)
     if (lamu_real$prob == 0.0) {
-      return("Simulation got stuck")
+      return("Simulation got stuck (before event happens)")
     }
     prob_fake <- max(0, lamu$prob - lamu_real$prob)
     if (1 == sample.int(2, 1, prob = c(lamu_real$prob, prob_fake))) {
@@ -136,6 +136,9 @@ edd_sim_single <- function(pars, age, metric, offset, size_limit) {
       }
     }
     lamu <- lamu_fn(sim, t)
+    if (lamu$prob == 0.0) {
+      return("Simulation got stuck (after event happens)")
+    }
     t <- t + stats::rexp(1, lamu$prob)
     if (evesim::SimTable.size(sim) > size_limit) {
       return("size limit exceeded")
