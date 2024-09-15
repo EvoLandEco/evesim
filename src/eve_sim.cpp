@@ -332,6 +332,35 @@ int SimTable_size(Rcpp::RObject Robj) {
 }
 
 
+//' Convert SimTable object to Legacy L-table Format
+//'
+//' This function extracts the simulation results from a SimTable object and converts them into
+//' a legacy L-table format, represented as an R numeric matrix.
+//'
+//' The L-table is a common representation of evolutionary simulations, where each row corresponds to a lineage
+//' with its birth, ancestor, label, and death times. This function also preserves a known flaw in the legacy L-table
+//' format where the second column's first element is manually set to -1.
+//'
+//' @param Robj A tagged external pointer to a `sim_table_t` object, which contains the SimTable simulation results.
+//'
+//' @return A \code{NumericMatrix} with four columns:
+//' \describe{
+//'   \item{Column 1}{The birth time (t) of the lineage.}
+//'   \item{Column 2}{The ancestor of the lineage.}
+//'   \item{Column 3}{The label assigned to the lineage.}
+//'   \item{Column 4}{The death time of the lineage, or -1 if the lineage is still extant.}
+//' }
+//'
+//' @note For backward compatibility, the second element of the first row in the matrix (Column 2, Row 1) is set to -1 to reintroduce a known flaw in the legacy L-table format used in the DDD package.
+//'
+//' @examples
+//' # Example usage
+//' pars = c(0.5, 0.1, -0.001, -0.001, 0.0, 0.0)
+//' sim_table <- evesim::edd_sim(pars = pars, age = 20, metric = "nnd", offset = "none")
+//' ltable <- SimTable.ltable(sim_table$sim)
+//'
+//' @export
+//' @useDynLib evesim
 // [[Rcpp::export("SimTable.ltable", rng = false)]]
 Rcpp::NumericMatrix SimTable_ltable(SEXP Robj) {
   auto* ptr = tagged_xptr<sim_table_t>(Robj, SimTable_tag).get();
@@ -350,11 +379,33 @@ Rcpp::NumericMatrix SimTable_ltable(SEXP Robj) {
 }
 
 
+//' Convert SimTable object to Phylogenetic Tree
+//'
+//' This function extracts a phylogenetic tree from a given SimTable object and returns it in a
+//' phylo-compatible format, suitable for downstream analysis in R. It can optionally remove extinct lineages
+//' from the tree.
+//'
+//' @param Robj A tagged external pointer to a `sim_table_t` object, which contains the SimTable simulation results.
+//' @param drop_extinct A logical flag indicating whether extinct lineages should be removed from the resulting phylogenetic tree.
+//' \code{TRUE} will drop extinct lineages, and \code{FALSE} will return the full tree including extinct lineages.
+//'
+//' @return A phylo object (from the \code{ape} package) representing the phylogenetic tree extracted from the simulation table.
+//'
+//' @examples
+//' # Example usage
+//' pars = c(0.5, 0.1, -0.001, -0.001, 0.0, 0.0)
+//' sim_table <- evesim::edd_sim(pars = pars, age = 20, metric = "nnd", offset = "none")
+//' phylo_tree <- SimTable.phylo(sim_table$sim, drop_extinct = TRUE)
+//'
+//' @seealso \code{\link[ape]{phylo}} for more information about phylogenetic trees in R.
+//'
+//' @export
+//' @useDynLib evesim
 // [[Rcpp::export("SimTable.phylo", rng = false)]]
 Rcpp::List SimTable_phylo(SEXP Robj, bool drop_extinct) {
   auto* ptr = tagged_xptr<sim_table_t>(Robj, SimTable_tag).get();
   return drop_extinct
-    ? phylo_t(ptr->tree()).unwrap() 
+    ? phylo_t(ptr->tree()).unwrap()
     : phylo_t(ptr->full_tree()).unwrap();
 }
 
@@ -403,7 +454,7 @@ Rcpp::IntegerVector SimTable_tip_label(SEXP Robj, bool drop_extinct) {
     tree.tip_label(ret.begin());
     return ret;
   }
-  auto ret = Rcpp::IntegerVector(ptr->nspecie()); 
+  auto ret = Rcpp::IntegerVector(ptr->nspecie());
   ptr->specie_label(ret.begin());
   return ret;
 }
