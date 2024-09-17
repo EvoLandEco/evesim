@@ -1,0 +1,7 @@
+
+*.h
+*.pper
+/.Rproj.user
+.Rhistory
+*.o
+*.dll
