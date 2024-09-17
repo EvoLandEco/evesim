@@ -1,10 +1,17 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/EvoLandEco/evesim/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EvoLandEco/evesim/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/eve)](https://CRAN.R-project.org/package=eve)
 <!-- badges: end -->
 
 # evesim
 
-## Example
+## How to install
+```R
+require(remotes)
+remotes::install_github("EvoLandEco/evesim")
+```
+
+## How to use
 
 ```R
 library(evesim)
