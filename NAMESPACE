@@ -1,4 +1,7 @@
 useDynLib(evesim, .registration=TRUE)
 import(Rcpp)
 importFrom(RcppParallel, RcppParallelLibs)
-exportPattern("^[[:alpha:]]+")
+
+export(SimTable.ltable)
+export(SimTable.phylo)
+export(edd_sim)
