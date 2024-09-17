@@ -2,6 +2,4 @@ useDynLib(evesim, .registration=TRUE)
 import(Rcpp)
 importFrom(RcppParallel, RcppParallelLibs)
 
-export(SimTable.ltable)
-export(SimTable.phylo)
 export(edd_sim)

@@ -25,11 +25,12 @@ RcppParallel::setThreadOptions(numThreads = 1)
 pars = c(0.5, 0.1, -0.001, -0.001, 0.0, 0.0)
 sim <- edd_sim(pars = pars, age = 10, metric = "nnd", offset = "none")
 
-# convert results to an ape::phylo object
-phy <- SimTable.phylo(sim$sim, drop_extinct = TRUE)
-plot(phy)
+# Plot extant tree
+plot(sim$tes)
 
-# convert results to an L table
-L <- SimTable.ltable(sim$sim)
-L
+# Plot complete tree
+plot(sim$tas)
+
+# L table
+sim$L
 ```

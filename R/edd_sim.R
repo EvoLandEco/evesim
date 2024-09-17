@@ -177,7 +177,9 @@ edd_sim_single <- function(pars, age, metric, offset, size_limit) {
 #'
 #' @return A list containing the following components:
 #' \describe{
-#'   \item{sim}{The simulated data object, or \code{NULL} if the simulation failed after all retry attempts.}
+#'   \item{tes}{A phylogeny with only extant lineages, or \code{NULL} if the simulation failed after all retry attempts.}
+#'   \item{tas}{A phylogeny with all lineages, or \code{NULL} if the simulation failed after all retry attempts.}
+#'   \item{L}{An L table recording the historical events, or \code{NULL} if the simulation failed after all retry attempts.}
 #'   \item{msg}{A character string containing error messages (if any) accumulated over the retry attempts.}
 #' }
 #'
@@ -200,13 +202,12 @@ edd_sim_single <- function(pars, age, metric, offset, size_limit) {
 #' # RcppParallel::setThreadOptions(numThreads = 1)
 #'
 #' pars = c(0.5, 0.1, -0.001, -0.001, 0.0, 0.0)
-#' sim <- edd_sim(pars = pars, age = 50, metric = "nnd", offset = "none")
-#'
-#' # convert to a phylo object
-#' phy <- SimTable.phylo(sim$sim, drop_extinct = TRUE)
+#' sim <- edd_sim(pars = pars, age = 10, metric = "nnd", offset = "none")
 #'
 #' @references
-#' Reference will be added later
+#' Impact of Evolutionary Relatedness on Species Diversification: A New Birth-Death Model
+#' Tianjian Qin, Luis Valente, Rampal S. Etienne
+#' bioRxiv 2023.11.09.566365; doi: https://doi.org/10.1101/2023.11.09.566365
 #'
 #' @export
 edd_sim <- function(pars,
@@ -225,8 +226,11 @@ edd_sim <- function(pars,
       retry <- retry - 1
     } else {
       # success
-      return(list(sim = res, msg = msg))
+      tes <- SimTable.phylo(res, drop_extinct = TRUE)
+      tas <- SimTable.phylo(res, drop_extinct = FALSE)
+      L <- SimTable.ltable(res)
+      return(list(tes = tes, tas = tas, L = L, msg = msg))
     }
   }
-  list(sim = NULL, msg = msg)
+  list(tes = NULL, tas = NULL, L = NULL, msg = msg)
 }
