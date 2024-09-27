@@ -1,24 +1,24 @@
-Package: eve
+Package: evesim
 Title: Evolution Emulator: Species Diversification under an Evolutionary Relatedness Dependent Scenario
 Version: 1.0.0
 Authors@R: 
-    person(given = "Hanno",
-           family = "Hildenbrandt",
-           role = c("aut"),
-           email = "h.hildenbrandt@rug.nl",
-           comment = c(ORCID = "0000-0002-6784-1037"))
-    person(given = "Tianjian",
+    c(person(given = "Tianjian",
            family = "Qin",
            role = c("aut", "cre"),
-           email = "t.qin@rug.nl")
+           email = "t.qin@rug.nl"),
+    person(given = "Hanno",
+           family = "Hildenbrandt",
+           role = "aut",
+           email = "h.hildenbrandt@rug.nl",
+           comment = c(ORCID = "0000-0002-6784-1037")),
     person(given = "Luis",
            family = "Valente",
            role = c("aut", "ths"),
-           email = "luis.valente@naturalis.nl")
+           email = "luis.valente@naturalis.nl"),
     person(given = "Rampal",
            family = "Etienne",
            role = c("aut", "ths"),
-           email = "r.s.etienne@rug.nl")
+           email = "r.s.etienne@rug.nl"))
 Description: Evolutionary relatedness dependent diversification simulation powered by the Rcpp backend SimTable.
 License: MIT + file LICENSE
 Depends: R (>= 4.2.0)
