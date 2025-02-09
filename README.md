@@ -4,6 +4,7 @@
 <!-- badges: end -->
 
 # evesim
+Tianjian Qin, Luis Valente, Rampal Etienne. Impact of evolutionary relatedness on species diversification and tree shape. BioRXiv. DOI: https://doi.org/10.1101/2023.11.09.566365
 
 ## How to install
 ```R

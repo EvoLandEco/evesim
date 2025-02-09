@@ -7,3 +7,5 @@
 ^CRAN-RELEASE$
 ^\.git$
 ^\.github$
+^_pkgdown\.yml$
+^pkgdown$
