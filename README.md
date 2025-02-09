@@ -1,6 +1,6 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/EvoLandEco/evesim/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/EvoLandEco/evesim/actions/workflows/R-CMD-check.yaml)
-[![CRAN status](https://www.r-pkg.org/badges/version/eve)](https://CRAN.R-project.org/package=eve)
+[![CRAN status](https://www.r-pkg.org/badges/version/eve)](https://CRAN.R-project.org/package=evesim)
 <!-- badges: end -->
 
 # evesim
