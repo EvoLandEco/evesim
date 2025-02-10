@@ -19,7 +19,7 @@ Authors@R:
            family = "Etienne",
            role = c("aut", "ths"),
            email = "r.s.etienne@rug.nl"))
-Description: Evolutionary relatedness dependent diversification simulation powered by the Rcpp backend SimTable.
+Description: Evolutionary relatedness dependent diversification simulation powered by the 'Rcpp' backend 'SimTable'.
 License: MIT + file LICENSE
 Depends: R (>= 4.2.0)
 Imports:
@@ -28,6 +28,6 @@ Imports:
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-SystemRequirements: C++20
+SystemRequirements: C++17
 LinkingTo: Rcpp (>= 1.0.11), RcppParallel
 URL: http://qtj.me/evesim/
