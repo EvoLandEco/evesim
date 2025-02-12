@@ -354,7 +354,7 @@ Rcpp::NumericMatrix SimTable_ltable(SEXP Robj) {
 Rcpp::List SimTable_phylo(SEXP Robj, bool drop_extinct) {
   auto* ptr = tagged_xptr<sim_table_t>(Robj, SimTable_tag).get();
   return drop_extinct
-    ? phylo_t(ptr->tree()).unwrap() 
+    ? phylo_t(ptr->tree()).unwrap()
     : phylo_t(ptr->full_tree()).unwrap();
 }
 
@@ -403,7 +403,7 @@ Rcpp::IntegerVector SimTable_tip_label(SEXP Robj, bool drop_extinct) {
     tree.tip_label(ret.begin());
     return ret;
   }
-  auto ret = Rcpp::IntegerVector(ptr->nspecie()); 
+  auto ret = Rcpp::IntegerVector(ptr->nspecie());
   ptr->specie_label(ret.begin());
   return ret;
 }
@@ -417,7 +417,7 @@ Rcpp::NumericMatrix SimTable_cophenetic(SEXP Robj, Rcpp::Nullable<double> t = R_
     const double ofs = 2.0 * (ptr->age() - Rcpp::as<double>(t));
     const int tips = ptr->nspecie();
     for (int i = 0; i < tips; ++i) {
-      for (int j = 0; j < tips; ++i) {
+      for (int j = 0; j < tips; ++j) {
         if (i != j) res(i, j) -= ofs;
       }
     }

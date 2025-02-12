@@ -1,17 +1,33 @@
 Package: evesim
-Title: simulation code for eve
-Version: 0.0.0.1
+Title: Evolution Emulator: Species Diversification under an Evolutionary Relatedness Dependent Scenario
+Version: 1.0.0
 Authors@R: 
+    c(person(given = "Tianjian",
+           family = "Qin",
+           role = c("aut", "cre"),
+           email = "t.qin@rug.nl"),
     person(given = "Hanno",
            family = "Hildenbrandt",
-           role = c("aut", "cre"),
+           role = "aut",
            email = "h.hildenbrandt@rug.nl",
-           comment = c(ORCID = "0000-0002-6784-1037"))
-Description: Rcpp backend for eve and DDD
-License: MIT
-Depends: R (>= 4.2.0)
+           comment = c(ORCID = "0000-0002-6784-1037")),
+    person(given = "Luis",
+           family = "Valente",
+           role = c("aut", "ths"),
+           email = "luis.valente@naturalis.nl"),
+    person(given = "Rampal",
+           family = "Etienne",
+           role = c("aut", "ths"),
+           email = "r.s.etienne@rug.nl"))
+Description: Evolutionary relatedness dependent diversification simulation powered by the 'Rcpp' back-end 'SimTable'.
+License: MIT + file LICENSE
+Depends: R (>= 4.4.0)
+Imports:
+    Rcpp,
+    RcppParallel
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
-SystemRequirements: C++20
+RoxygenNote: 7.3.2
+SystemRequirements: C++17
 LinkingTo: Rcpp (>= 1.0.11), RcppParallel
+URL: http://qtj.me/evesim/

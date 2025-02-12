@@ -1,4 +1,5 @@
 useDynLib(evesim, .registration=TRUE)
 import(Rcpp)
 importFrom(RcppParallel, RcppParallelLibs)
-exportPattern("^[[:alpha:]]+")
+
+export(edd_sim)
