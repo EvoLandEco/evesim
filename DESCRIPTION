@@ -19,7 +19,7 @@ Authors@R:
            family = "Etienne",
            role = c("aut", "ths"),
            email = "r.s.etienne@rug.nl"))
-Description: Evolutionary relatedness dependent diversification simulation powered by the 'Rcpp' backend 'SimTable'.
+Description: Evolutionary relatedness dependent diversification simulation powered by the 'Rcpp' back-end 'SimTable'.
 License: MIT + file LICENSE
 Depends: R (>= 4.2.0)
 Imports:
