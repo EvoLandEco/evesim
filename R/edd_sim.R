@@ -207,7 +207,7 @@ edd_sim_single <- function(pars, age, metric, offset, size_limit) {
 #' @references
 #' Impact of Evolutionary Relatedness on Species Diversification: A New Birth-Death Model
 #' Tianjian Qin, Luis Valente, Rampal S. Etienne
-#' bioRxiv 2023.11.09.566365; doi: https://doi.org/10.1101/2023.11.09.566365
+#' Journal of Theoretical Biology; DOI: https://doi.org/10.1016/j.jtbi.2024.111992
 #'
 #' @export
 edd_sim <- function(pars,
