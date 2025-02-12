@@ -1,9 +1,20 @@
 citHeader("To cite evesim in publications use:")
 
-citEntry(
-  entry    = "Article",
+bibentry(
+  bibtype  = "Article",
   title    = "Impact of evolutionary relatedness on species diversification and tree shape",
-  author   = c("Tianjian Qin", "Luis Valente", "Rampal S. Etienne"),
+  author   = c(person(given = "Tianjian",
+                     family = "Qin",
+                     role = c("aut", "cre"),
+                     email = "t.qin@rug.nl"),
+               person(given = "Luis",
+                     family = "Valente",
+                     role = c("aut", "ths"),
+                     email = "luis.valente@naturalis.nl"),
+               person(given = "Rampal",
+                     family = "Etienne",
+                     role = c("aut", "ths"),
+                     email = "r.s.etienne@rug.nl")),
   journal  = "Journal of Theoretical Biology",
   year     = "2025",
   volume   = "598",
